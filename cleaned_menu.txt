@@ -1,0 +1,35 @@
+
+=== COOL OFF ===
+Slushy on Tap | Large: 35.0
+Frappé on Tap | Large: 35.0
+
+=== EXTRAS ===
+Flavors | 7.00
+Espresso Shot | Single: 8.0 |
+Alternative Milk | Small: 8.0 | Medium: 12.0 | Large: 16.0
+
+=== HOT DRINKS ===
+Espresso (Single) | 12.0
+Espresso (Double) | 20.0
+Cortado | Small: 25.0 | Medium: 30.0
+Flat White | Small: 35.0 | Medium: 40.0 | Large: 50.0
+Americano | Small: 25.0 | Medium: 30.0 | Large: 35.0
+Cappuccino | Small: 30.0 | Medium: 35.0 | Large: 45.0
+Latte | Small: 30.0 | Medium: 35.0 | Large: 40.0
+Chai Latte | Small: 35.0 | Medium: 40.0 | Large: 45.0
+Red Cappuccino | Small: 30.0 | Medium: 35.0 | Large: 40.0
+Hot Chocolate | Small: 25.0 | Medium: 30.0 | Large: 35.0
+
+=== ICED COFFEE ===
+Iced Americano | Large: 35.0
+Flavored Iced Coffee | Large: 45.0
+Iced Mocha | Large: 45.0
+
+=== SLUSH IT UP ===
+Mango Slush | Large: 45.0
+Strawberry Slush | Large: 45.0
+Passion Fruit Slush | Large: 45.0
+Lemonade & Mint Slush | Large: 45.0
+
+=== SMOOTHIE ===
+Breakfast for Champions (Banana, Cacao, Peanut Butter, Honey, Yogurt) | Large: 50.0
