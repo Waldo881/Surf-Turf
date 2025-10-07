@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf & Turf Coffee - We bring the good vibes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="ChatGPT Image Aug 21, 2025, 07_44_25 PM.png" alt="Surf & Turf Coffee" class="logo-img">
+                <span class="logo-text">Surf & Turf Coffee</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="admin-section">
+                <button id="admin-login-btn" onclick="openAdminLogin()" class="admin-login-btn">
+                    <i class="fas fa-cog"></i> Admin
+                </button>
+                <button id="admin-logout-btn" onclick="adminLogout()" class="admin-logout-btn" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="ChatGPT Image Aug 21, 2025, 07_44_25 PM.png" alt="Surf & Turf Coffee" class="hero-logo-img">
+                </div>
+                <h1 class="hero-title">Surf & Turf Coffee</h1>
+                <p class="hero-tagline">We bring the good vibes</p>
+                <a href="#menu" class="cta-button">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="address-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                        <p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=34+Holtzhausen+Rd,+Potchefstroom" target="_blank">
+                                34 Holtzhausen Rd<br>
+                                Potchefstroom
+                            </a>
+                        </p>
+                    </div>
+                    <div class="hours-card">
+                        <h3><i class="fas fa-clock"></i> Operating Hours</h3>
+                        <p>
+                            <strong>Mon–Fri:</strong> 06:00–16:00<br>
+                            <strong>Sat:</strong> 08:00–12:00<br>
+                            <strong>Sun:</strong> Closed<br>
+                            <strong>Public Holidays:</strong> 08:00–12:00
+                        </p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="map">
+                        <!-- Fallback Google Maps embed -->
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            style="border:0; border-radius: 20px;"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://maps.google.com/maps?q=34+Holtzhausen+Rd,+Potchefstroom,+South+Africa&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="hot-drinks">Hot Drinks</button>
+                    <button class="tab-btn" data-category="iced-coffee">Iced Coffee</button>
+                    <button class="tab-btn" data-category="cool-drinks">Cool Drinks</button>
+                    <button class="tab-btn" data-category="slush">Slush</button>
+                    <button class="tab-btn" data-category="smoothies">Smoothies</button>
+                    <button class="tab-btn" data-category="extras">Extras</button>
+                </div>
+                
+                <!-- Hot Drinks -->
+                <div class="menu-grid" id="hot-drinks">
+                    <div class="menu-item expandable-item" data-item="espresso">
+                        <div class="item-image">☕</div>
+                        <h3>Espresso</h3>
+                        <p>Rich, bold shot of premium coffee</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="single" data-price="12">
+                                    <span class="size-name">Single Shot</span>
+                                    <span class="size-price">R12</span>
+                                </div>
+                                <div class="size-option" data-size="double" data-price="20">
+                                    <span class="size-name">Double Shot</span>
+                                    <span class="size-price">R20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="cortado">
+                        <div class="item-image">☕</div>
+                        <h3>Cortado</h3>
+                        <p>Equal parts espresso and warm milk</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="single" data-price="25">
+                                    <span class="size-name">Single</span>
+                                    <span class="size-price">R25</span>
+                                </div>
+                                <div class="size-option" data-size="double" data-price="30">
+                                    <span class="size-name">Double</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="flatwhite">
+                        <div class="item-image">☕</div>
+                        <h3>Flat White</h3>
+                        <p>Smooth espresso with microfoam milk</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="35">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="40">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="50">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R50</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="americano">
+                        <div class="item-image">☕</div>
+                        <h3>Americano</h3>
+                        <p>Espresso with hot water for a clean taste</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="25">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R25</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="30">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="35">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="warm" data-add-price="0">
+                                        <span class="milk-name">Warm Milk (No Extra Cost)</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="cold" data-add-price="0">
+                                        <span class="milk-name">Cold Milk (No Extra Cost)</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="cappuccino">
+                        <div class="item-image">☕</div>
+                        <h3>Cappuccino</h3>
+                        <p>Perfect blend of espresso, steamed milk & foam</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="30">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="35">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="latte">
+                        <div class="item-image">☕</div>
+                        <h3>Latte</h3>
+                        <p>Smooth espresso with creamy steamed milk</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="30">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="35">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="40">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="chailatte">
+                        <div class="item-image">🫖</div>
+                        <h3>Chai Latte</h3>
+                        <p>Spiced tea blend with steamed milk</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="35">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="40">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="redcappuccino">
+                        <div class="item-image">☕</div>
+                        <h3>Red Cappuccino</h3>
+                        <p>South African rooibos cappuccino</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="30">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="35">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="40">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="mocha">
+                        <div class="item-image">☕</div>
+                        <h3>Mocha</h3>
+                        <p>Rich espresso with chocolate and steamed milk</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="35">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="40">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="dirtychai">
+                        <div class="item-image">🫖</div>
+                        <h3>Dirty Chai</h3>
+                        <p>Spiced chai latte with a shot of espresso</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="40">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R40</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="45">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R45</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="50">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R50</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="hotchocolate">
+                        <div class="item-image">🍫</div>
+                        <h3>Hot Chocolate</h3>
+                        <p>Rich, creamy hot chocolate</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="small" data-price="25">
+                                    <span class="size-name">Small</span>
+                                    <span class="size-price">R25</span>
+                                </div>
+                                <div class="size-option" data-size="medium" data-price="30">
+                                    <span class="size-name">Medium</span>
+                                    <span class="size-price">R30</span>
+                                </div>
+                                <div class="size-option" data-size="large" data-price="35">
+                                    <span class="size-name">Large</span>
+                                    <span class="size-price">R35</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Full Cream</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="skinny" data-add-price="0">
+                                        <span class="milk-name">Low Fat</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="8">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="8">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="nolac" data-add-price="8">
+                                        <span class="milk-name">No-Lac</span>
+                                        <span class="add-price">+R8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Iced Coffee -->
+                <div class="menu-grid hidden" id="iced-coffee">
+                    <div class="menu-item expandable-item" data-item="icedcoffee">
+                        <div class="item-image">🧊</div>
+                        <h3>Iced Coffee</h3>
+                        <p>Classic cold coffee, smooth and refreshing</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="30">
+                                    <span class="size-price">R30</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Regular Milk (No Extra Cost)</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="12">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="12">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="oat" data-add-price="12">
+                                        <span class="milk-name">Oat Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="icedamericano">
+                        <div class="item-image">🧊</div>
+                        <h3>Iced Americano</h3>
+                        <p>Refreshing cold espresso with water</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="35">
+                                    <span class="size-price">R35</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="flavoredicedcoffee">
+                        <div class="item-image">🧊</div>
+                        <h3>Flavored Iced Coffee</h3>
+                        <p>Cold coffee with your choice of flavor</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Regular Milk (No Extra Cost)</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="12">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="12">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="oat" data-add-price="12">
+                                        <span class="milk-name">Oat Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="icedmocha">
+                        <div class="item-image">🍫</div>
+                        <h3>Iced Mocha</h3>
+                        <p>Cold coffee with chocolate and cream</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                            <div class="milk-alternatives" style="display: none;">
+                                <h4>Milk Options</h4>
+                                <div class="alternative-options">
+                                    <div class="alternative-option" data-milk="regular" data-add-price="0">
+                                        <span class="milk-name">Regular Milk (No Extra Cost)</span>
+                                        <span class="add-price">+R0</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="macadamia" data-add-price="12">
+                                        <span class="milk-name">Macadamia Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="almond" data-add-price="12">
+                                        <span class="milk-name">Almond Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                    <div class="alternative-option" data-milk="oat" data-add-price="12">
+                                        <span class="milk-name">Oat Milk</span>
+                                        <span class="add-price">+R12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cool Drinks -->
+                <div class="menu-grid hidden" id="cool-drinks">
+                    <div class="menu-item expandable-item" data-item="slushyontap">
+                        <div class="item-image">🥤</div>
+                        <h3>Slushy on Tap</h3>
+                        <p>Refreshing frozen drink on tap</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="35">
+                                    <span class="size-price">R35</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="frappeontap">
+                        <div class="item-image">🥤</div>
+                        <h3>Frappé on Tap</h3>
+                        <p>Blended iced coffee drink on tap</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="35">
+                                    <span class="size-price">R35</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slush -->
+                <div class="menu-grid hidden" id="slush">
+                    <div class="menu-item expandable-item" data-item="mangoslush">
+                        <div class="item-image">🥭</div>
+                        <h3>Mango Slush</h3>
+                        <p>Tropical mango frozen delight</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="strawberryslush">
+                        <div class="item-image">🍓</div>
+                        <h3>Strawberry Slush</h3>
+                        <p>Sweet strawberry frozen treat</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="passionfruitslush">
+                        <div class="item-image">🍇</div>
+                        <h3>Passion Fruit Slush</h3>
+                        <p>Tangy passion fruit frozen drink</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="lemonademintsslush">
+                        <div class="item-image">🍋</div>
+                        <h3>Lemonade & Mint Slush</h3>
+                        <p>Refreshing citrus mint frozen drink</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="45">
+                                    <span class="size-price">R45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Smoothies -->
+                <div class="menu-grid hidden" id="smoothies">
+                    <div class="menu-item expandable-item" data-item="breakfastchampions">
+                        <div class="item-image">🥤</div>
+                        <h3>Breakfast for Champions</h3>
+                        <p>Banana, Cacao, Peanut Butter, Honey, Yogurt</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="large" data-price="50">
+                                    <span class="size-price">R50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extras -->
+                <div class="menu-grid hidden" id="extras">
+                    <div class="menu-item expandable-item" data-item="flavors">
+                        <div class="item-image">🌟</div>
+                        <h3>Flavors</h3>
+                        <p>Add any flavor to your drink</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="vanilla" data-price="8">
+                                    <span class="size-name">Vanilla</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                                <div class="size-option" data-size="caramel" data-price="8">
+                                    <span class="size-name">Caramel</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                                <div class="size-option" data-size="roasted-almond" data-price="8">
+                                    <span class="size-name">Roasted Almond</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                                <div class="size-option" data-size="hazelnut" data-price="8">
+                                    <span class="size-name">Hazelnut</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                                <div class="size-option" data-size="shortbread-cookie" data-price="8">
+                                    <span class="size-name">Shortbread Cookie</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item expandable-item" data-item="extrashot">
+                        <div class="item-image">☕</div>
+                        <h3>Extra Espresso Shot</h3>
+                        <p>Add an extra shot to any drink</p>
+                        <div class="item-expand-icon">+</div>
+                        <div class="item-details hidden">
+                            <div class="size-options">
+                                <div class="size-option" data-size="single" data-price="8">
+                                    <span class="size-name">Single Shot</span>
+                                    <span class="size-price">R8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>At Surf & Turf Coffee, we believe coffee is best enjoyed together. Our little shop was created with one goal in mind: to be a warm and welcoming place where neighbors, friends, and travelers can slow down and feel at home.</p>
+                    <p>Our name comes from the balance we love — the turf, rooted in the heart of our community, and the surf, bringing a relaxed, easygoing spirit. Just like the waves meet the shore, we hope every visit here feels like the perfect blend of comfort and connection.</p>
+                    <p>We serve freshly roasted coffee and homemade treats with care, but what really makes us proud is the community gathered around our tables. Whether you're starting your morning, taking a midday break, or catching up with an old friend, there's always a seat waiting for you.</p>
+                    <p>Surf & Turf Coffee — brewed with love, shared with friends.</p>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-image">
+                        <i class="fas fa-store"></i>
+                        <p>Shop Interior Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:hello@surfandturfcoffee.co.za">hello@surfandturfcoffee.co.za</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Visit Us</h3>
+                    <p>34 Holtzhausen Rd<br>Potchefstroom</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Surf & Turf Coffee. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <strong>Total: R<span id="cart-total">0</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Button (Fixed Position) -->
+    <div class="cart-button" onclick="openCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Checkout & Delivery</h2>
+                <button class="close-modal" onclick="closeCheckout()">&times;</button>
+            </div>
+            
+            <div class="checkout-form">
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items"></div>
+                    <div class="checkout-total">
+                        <strong>Total: R<span id="checkout-total">0</span></strong>
+                    </div>
+                </div>
+                
+                <!-- Customer Details -->
+                <div class="customer-details">
+                    <h3>Your Details</h3>
+                    <input type="text" id="customer-name" placeholder="Full Name" required>
+                    <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+                    <input type="email" id="customer-email" placeholder="Email Address (for order confirmation)" required>
+                </div>
+                
+                <!-- Delivery Details -->
+                <div class="delivery-details">
+                    <h3>Delivery Information</h3>
+                    <textarea id="delivery-address" placeholder="Full Delivery Address" required></textarea>
+                    <input type="date" id="delivery-date" required>
+                    <input type="time" id="delivery-time" required>
+                    <textarea id="delivery-notes" placeholder="Special delivery instructions (optional)"></textarea>
+                </div>
+                
+                <!-- Payment Information -->
+                <div class="payment-info">
+                    <h3>Payment</h3>
+                    <p><strong>Payment will be collected on delivery</strong></p>
+                    <p>Our driver will have a card machine for card payments, or you can pay with cash.</p>
+                </div>
+                
+                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="confirmation-modal" class="confirmation-modal">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">✅</div>
+            <h2>Order Confirmed!</h2>
+            <p>Your order has been successfully placed.</p>
+            <div id="order-details"></div>
+            <button onclick="closeConfirmation()">Close</button>
+        </div>
+    </div>
+
+    <!-- Clear Cart Confirmation Modal -->
+    <div id="clear-cart-modal" class="clear-cart-modal">
+        <div class="clear-cart-content">
+            <div class="clear-cart-header">
+                <h3>Clear Cart</h3>
+                <button class="close-modal" onclick="closeClearCartModal()">&times;</button>
+            </div>
+            <div class="clear-cart-body">
+                <div class="warning-icon">⚠️</div>
+                <p>Are you sure you want to clear your cart?</p>
+                <p class="clear-cart-subtitle">This will remove all items from your cart.</p>
+            </div>
+            <div class="clear-cart-actions">
+                <button class="cancel-btn" onclick="closeClearCartModal()">Cancel</button>
+                <button class="confirm-clear-btn" onclick="confirmClearCart()">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty Cart Modal -->
+    <div id="empty-cart-modal" class="empty-cart-modal">
+        <div class="empty-cart-content">
+            <div class="empty-cart-header">
+                <h3>Your Cart is Empty</h3>
+                <button class="close-modal" onclick="closeEmptyCartModal()">&times;</button>
+            </div>
+            <div class="empty-cart-body">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Looks like you haven't added any items to your cart yet!</p>
+                <p class="empty-cart-subtitle">Browse our delicious menu and add some items to get started.</p>
+            </div>
+            <div class="empty-cart-actions">
+                <button class="browse-menu-btn" onclick="browseMenu()">Browse Menu</button>
+                <button class="close-empty-cart-btn" onclick="closeEmptyCartModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receipt-modal" class="receipt-modal">
+        <div class="receipt-content">
+            <div class="receipt-header">
+                <h2>Order Receipt</h2>
+                <button class="close-receipt" onclick="closeReceipt()">&times;</button>
+            </div>
+            <div class="receipt-body" id="receipt-body">
+                <!-- Receipt content will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Admin Login</h2>
+                <button class="close-modal" onclick="closeAdminLogin()">&times;</button>
+            </div>
+            <div class="checkout-form">
+                <div class="customer-details">
+                    <h3>Access Admin Panel</h3>
+                    <p style="color: #636e72; margin-bottom: 20px;">
+                        Enter your admin credentials to access the email notification settings:
+                    </p>
+                    
+                    <input type="text" id="admin-username" placeholder="Admin Username" style="width: 100%; margin-bottom: 15px;">
+                    <input type="password" id="admin-password" placeholder="Admin Password" style="width: 100%; margin-bottom: 15px;">
+                    
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
+                        <p style="margin: 0; color: #856404; font-weight: 600;">🔐 Default Credentials:</p>
+                        <p style="margin: 5px 0 0 0; color: #856404; font-size: 14px;">
+                            Username: <strong>admin</strong><br>
+                            Password: <strong>surfturf2025</strong>
+                        </p>
+                        <p style="margin: 10px 0 0 0; color: #856404; font-size: 12px; font-style: italic;">
+                            Change these credentials in the JavaScript code for security.
+                        </p>
+                    </div>
+                    
+                    <button class="place-order-btn" onclick="adminLogin()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Setup Modal -->
+    <div id="email-setup-modal" class="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Email Notifications Setup</h2>
+                <button class="close-modal" onclick="closeEmailSetup()">&times;</button>
+            </div>
+            <div class="checkout-form">
+                <div class="customer-details">
+                    <h3>Configure Email Notifications</h3>
+                    <p style="color: #636e72; margin-bottom: 20px;">
+                        Set up EmailJS to send customer receipts and shop notifications:
+                    </p>
+                    
+                    <!-- EmailJS Configuration -->
+                    <div style="margin-bottom: 25px; padding: 15px; border: 2px solid #20b2aa; border-radius: 8px; background: #f8f9fa;">
+                        <h4 style="color: #20b2aa; margin: 0 0 10px 0;">📧 EmailJS Configuration</h4>
+                        <p style="color: #636e72; font-size: 14px; margin: 0 0 15px 0;">
+                            Get your EmailJS credentials from <a href="https://www.emailjs.com/" target="_blank" style="color: #20b2aa;">emailjs.com</a>
+                        </p>
+                        <input type="text" id="emailjs-public-key" placeholder="EmailJS Public Key" style="width: 100%; margin-bottom: 10px;">
+                        <input type="text" id="emailjs-service-id" placeholder="EmailJS Service ID" style="width: 100%; margin-bottom: 10px;">
+                        <input type="text" id="emailjs-template-id" placeholder="EmailJS Template ID" style="width: 100%; margin-bottom: 10px;">
+                        <input type="email" id="shop-email" placeholder="Shop email address for notifications" value="surfandturfcoffee@gmail.com" style="width: 100%; margin-bottom: 10px;">
+                        <label style="display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox" id="email-enabled">
+                            <span>Enable email notifications</span>
+                        </label>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #20b2aa;">
+                        <p style="margin: 0; color: #2d3436; font-weight: 600;">📋 Setup Instructions:</p>
+                        <ol style="margin: 10px 0 0 0; padding-left: 20px; color: #636e72; font-size: 14px;">
+                            <li>Create free account at <a href="https://www.emailjs.com/" target="_blank" style="color: #20b2aa;">emailjs.com</a></li>
+                            <li>Add your Gmail/Outlook service</li>
+                            <li>Create email templates (customer receipt & shop notification)</li>
+                            <li>Copy your Public Key, Service ID, and Template IDs</li>
+                            <li>Enter them below and save</li>
+                        </ol>
+                    </div>
+                    
+                    <button class="place-order-btn" onclick="saveEmailConfig()">Save Configuration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
